@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Descargador de MP3</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Descargar MP3 desde YouTube</h1>
+
+        <form id="downloadForm">
+            <label for="url">URL del Video o Playlist:</label>
+            <input type="text" id="url" name="url" required>
+            <br>
+            <p>Los archivos se guardarán en: <strong>C:\Users\scbll\Downloads\Musica</strong></p>
+            <button type="submit">Descargar</button>
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
