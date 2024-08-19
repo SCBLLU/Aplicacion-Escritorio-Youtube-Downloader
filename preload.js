@@ -1,18 +1,16 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-// Exponer ipcRenderer al contexto de la ventana del navegador (renderizador)
 contextBridge.exposeInMainWorld('electron', {
     send: (channel, data) => {
         // Solo permite canales seguros
-        let validChannels = ['download'];
+        let validChannels = ['download', 'select-path'];
         if (validChannels.includes(channel)) {
             ipcRenderer.send(channel, data);
         }
     },
     on: (channel, func) => {
-        let validChannels = ['download-success', 'download-error'];
+        let validChannels = ['download-success', 'download-error', 'path-selected', 'file-list'];
         if (validChannels.includes(channel)) {
-            // Deliberadamente eliminar el primer argumento (event) de ipcRenderer.on
             ipcRenderer.on(channel, (event, ...args) => func(...args));
         }
     }

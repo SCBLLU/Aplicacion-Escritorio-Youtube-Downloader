@@ -4,25 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/6305bb531f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="design.css">
     <title>Descargador de MP3</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Descargar MP3 desde YouTube</h1>
+    <div class="container mt-5">
+        <h1 class="text-center text-light">Descargar MP3 desde YouTube</h1>
 
         <form id="downloadForm">
-            <label for="url">URL del Video o Playlist:</label>
-            <input type="text" id="url" name="url" required>
-            <br>
-            <p>Los archivos se guardarán en: <strong>C:\Users\scbll\Downloads\Musica</strong></p>
-            <button type="submit">Descargar</button>
+            <div class="form-group">
+                <label for="url" class="text-light">URL del Video o Playlist:</label>
+                <div class="input-group mb-3">
+                    <input type="text" id="url" name="url" class="form-control"
+                        placeholder="https://youtube.com/playlist?list=..." required>
+                    <div class="input-group-append">
+                        <button type="button" id="clearUrl" class="btn btn-outline-light">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="selectPath" class="text-light">Ruta de Descarga:</label>
+                <button type="button" id="selectPath" class="btn btn-success">Seleccionar Ruta</button>
+            </div>
+            <p class="text-light">Ruta de Descarga: <strong id="currentPath">C:\Users\scbll\Downloads\Musica</strong>
+            </p>
+            <button type="submit" class="btn btn-primary">Descargar</button>
         </form>
 
-        <div id="result"></div>
+        <div id="result" class="mt-4">
+            <div id="fileList" class="mt-4">
+                <h2 class="text-light">Archivos Descargados:</h2>
+                <ul id="files" class="list-unstyled"></ul>
+            </div>
+        </div>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="renderer.js"></script>
 </body>
 

@@ -1,75 +1,85 @@
-/* design.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
+    background-color: #121212;
+    /* Fondo oscuro */
+    color: #e0e0e0;
+    /* Texto claro */
 }
 
 .container {
-    background-color: #fff;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    /* Fondo del contenedor */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    margin-top: 0;
-    color: #007bff;
-    font-size: 24px;
-    text-align: center;
+    color: #1db954;
+    /* Color verde de Spotify */
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
+.input-group .form-control {
+    background-color: #333;
+    /* Fondo oscuro para el campo de entrada */
+    color: #e0e0e0;
+    /* Texto claro en el campo de entrada */
+    border: 1px solid #444;
+    /* Borde del campo de entrada */
+}
+
+.input-group .btn-outline-light {
+    border: 1px solid #444;
+    /* Borde del botón */
+    color: #e0e0e0;
+    /* Texto claro en el botón */
+}
+
+.input-group .btn-outline-light:hover {
+    background-color: #444;
+    /* Fondo oscuro en hover */
+    color: #1db954;
+    /* Color verde de Spotify */
+}
+
+.btn-success {
+    background-color: #1db954;
+    /* Color verde de Spotify */
+    border-color: #1db954;
+    /* Borde verde de Spotify */
+}
+
+.btn-success:hover {
+    background-color: #1aa34a;
+    /* Color verde más oscuro en hover */
+    border-color: #1aa34a;
+    /* Borde verde más oscuro en hover */
+}
+
+.btn-primary {
+    background-color: #1db954;
+    /* Color verde de Spotify */
+    border-color: #1db954;
+    /* Borde verde de Spotify */
+}
+
+.btn-primary:hover {
+    background-color: #1aa34a;
+    /* Color verde más oscuro en hover */
+    border-color: #1aa34a;
+    /* Borde verde más oscuro en hover */
+}
+
+#currentPath {
     font-weight: bold;
 }
 
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
+#result,
+#fileList {
+    margin-top: 20px;
+}
+
+#fileList h2 {
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px 0;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#path {
-    display: block;
-    margin: 10px 0;
-    font-size: 16px;
-    color: #555;
-}
-
-#message {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #d9534f;
-    text-align: center;
 }
