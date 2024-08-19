@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "electron": "^26.2.0",
-    "electron-packager": "^17.1.1"
+    "electron-packager": "^17.1.1",
+    "parcel": "^2.12.0"
   },
   "dependencies": {
     "ffmpeg-static": "^4.4.0"

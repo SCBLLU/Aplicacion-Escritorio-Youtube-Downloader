@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $url = $_POST['url'];
-    $outputPath = 'C:\\Users\\scbll\\Downloads\\Musica';
+    $outputPath = 'C:\\youtube-downloads';
 
     $command = "yt-dlp --extract-audio --audio-format mp3 --output \"{$outputPath}\\%(title)s.%(ext)s\" " . escapeshellarg($url);
     exec($command, $output, $return_var);

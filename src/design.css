@@ -1,0 +1,108 @@
+body {
+    font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 600px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #1ed05e;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: transform 0.5s;
+
+}
+
+.input-group .input-music {
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    padding: 10px 40px;
+    flex: 1;
+}
+
+.input-group .input-music:hover,
+.input-group .input-music:focus {
+    background-color: #444;
+    border: 1px solid #fff;
+    outline: none;
+}
+
+.input-group .input-group-append {
+    display: flex;
+}
+
+.input-group .btn-outline-light {
+    border-radius: 0 50px 50px 0;
+    border-left: 0;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    padding: 10px 20px;
+}
+
+.input-group:hover .fa-solid {
+    transform: scale(1.1);
+}
+
+.input-group .btn-outline-light:hover {
+    background-color: #444;
+    color: #1ed05e;
+}
+
+.open-folder {
+    background-color: #1ed05e;
+    border-color: #1ed05e;
+    border-radius: 20px;
+    padding: 5px 20px;
+    border: none;
+    transition: transform 0.3s;
+}
+
+.open-folder:hover {
+    background-color: #1aa34a;
+    border-color: #1aa34a;
+    outline: none;
+    transform: scale(1.04);
+}
+
+.download-button {
+    background-color: #1ed05e;
+    color: rgb(0, 0, 0);
+    border-color: #1ed05e;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    transition: transform 0.1s;
+}
+
+.download-button:hover {
+    background-color: #1aa34a;
+    border-color: #1aa34a;
+    transform: scale(1.02);
+}
+
+#currentPath {
+    font-weight: bold;
+}
+
+#result,
+#fileList {
+    margin-top: 20px;
+}
+
+#fileList h2 {
+    margin-bottom: 10px;
+}
