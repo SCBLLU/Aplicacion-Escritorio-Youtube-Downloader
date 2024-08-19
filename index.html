@@ -12,28 +12,32 @@
 
 <body>
     <div class="container mt-5">
-        <h1 class="text-center text-light">Descargar MP3 desde YouTube</h1>
+        <h1 class="text-center text-light"><b>Descargar MP3 desde YouTube</b></h1>
+
+        <br>
 
         <form id="downloadForm">
             <div class="form-group">
                 <label for="url" class="text-light">URL del Video o Playlist:</label>
                 <div class="input-group mb-3">
-                    <input type="text" id="url" name="url" class="form-control"
+                    <input type="text" id="url" name="url" class="input-music"
                         placeholder="https://youtube.com/playlist?list=..." required>
-                    <div class="input-group-append">
+                    <div class="input-group-append ml-2">
                         <button type="button" id="clearUrl" class="btn btn-outline-light">
-                            <i class="fas fa-times"></i>
+                            <i class="fa-solid fa-trash"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="selectPath" class="text-light">Ruta de Descarga:</label>
-                <button type="button" id="selectPath" class="btn btn-success">Seleccionar Ruta</button>
+                <label for="selectPath" class="text-light">Cambiar ruta de descarga:</label>
+                <button type="button" id="selectPath" class="open-folder">
+                    <i class="fa-solid fa-folder-open"></i>
+                </button>
             </div>
             <p class="text-light">Ruta de Descarga: <strong id="currentPath">C:\Users\scbll\Downloads\Musica</strong>
             </p>
-            <button type="submit" class="btn btn-primary">Descargar</button>
+            <button type="submit" class="download-button"><b>Descargar</b></button>
         </form>
 
         <div id="result" class="mt-4">
