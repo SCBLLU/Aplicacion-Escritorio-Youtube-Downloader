@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const defaultPath = 'C:\\Users\\scbll\\Downloads\\Musica';
+    const defaultPath = 'C:\\Users\\scbll\\Downloads';
     const pathElement = document.getElementById('currentPath');
     pathElement.innerText = defaultPath;
 
