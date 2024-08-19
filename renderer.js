@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const defaultPath = 'C:\\Users\\scbll\\Downloads';
+    const defaultPath = 'C:\\youtube-downloads';
     const pathElement = document.getElementById('currentPath');
     pathElement.innerText = defaultPath;
 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Efecto visual para mostrar el cambio
         pathElement.style.transition = 'background-color 0.3s ease';
-        pathElement.style.backgroundColor = 'lightgreen';
+        pathElement.style.backgroundColor = '#1aa34a';
         setTimeout(() => {
             pathElement.style.backgroundColor = 'transparent';
         }, 500);
