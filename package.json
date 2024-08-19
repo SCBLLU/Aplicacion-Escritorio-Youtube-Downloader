@@ -5,14 +5,23 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . YoutubeMusicDownloader --platform=win32 --arch=x64 --out=dist --icon=icon.ico --overwrite"
+    "package": "electron-packager . YoutubeMusicDownloader --platform=win32 --arch=x64 --out=dist --icon=icon.ico --overwrite",
+    "build": "electron-builder"
   },
   "devDependencies": {
     "electron": "^26.2.0",
+    "electron-builder": "^24.13.3",
     "electron-packager": "^17.1.1",
     "parcel": "^2.12.0"
   },
   "dependencies": {
     "ffmpeg-static": "^4.4.0"
+  },
+  "build": {
+    "appId": "Desktop.youtubemusicdownloader",
+    "win": {
+      "target": "zip",
+      "icon": "icon.ico"
+    }
   }
 }
