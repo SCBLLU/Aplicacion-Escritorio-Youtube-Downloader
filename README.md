@@ -12,6 +12,8 @@ Una vez que las dependencias estén instaladas, puedes levantar la aplicación e
 ```
 npm start
 ```
+![image](https://github.com/user-attachments/assets/dba58e97-adba-47f2-9aea-5d4fd3e75a6d)
+
 
 Esto iniciará el programa con Node.js y Electron, permitiéndote descargar videos de YouTube y convertirlos en formato mp3. También tendrás la opción de descargar desde una canción hasta una playlist completa.
 
