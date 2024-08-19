@@ -22,7 +22,9 @@ app.whenReady().then(() => {
     createWindow();
 
     ipcMain.on('download', (event, { url, outputPath }) => {
-        const command = `yt-dlp --extract-audio --audio-format mp3 --output "${path.join(outputPath, '%(title)s.%(ext)s')}" ${url}`;
+        // Envolver la URL en comillas dobles
+        const safeUrl = `"${url}"`;
+        const command = `yt-dlp --extract-audio --audio-format mp3 --output "${path.join(outputPath, '%(title)s.%(ext)s')}" ${safeUrl}`;
 
         exec(command, (error, stdout, stderr) => {
             if (error) {
@@ -48,18 +50,21 @@ app.whenReady().then(() => {
     });
 
     ipcMain.on('select-path', (event) => {
-        // Asegúrate de que tienes el módulo 'dialog' importado
         const { dialog } = require('electron');
-        dialog.showOpenDialog({
-            properties: ['openDirectory']
-        }).then(result => {
-            if (!result.canceled && result.filePaths.length > 0) {
-                const selectedPath = result.filePaths[0];
-                event.reply('path-selected', selectedPath);
-            }
-        }).catch(err => {
-            event.reply('download-error', 'Error al seleccionar la ruta.');
-        });
+        try {
+            dialog.showOpenDialog({
+                properties: ['openDirectory']
+            }).then(result => {
+                if (!result.canceled && result.filePaths.length > 0) {
+                    const selectedPath = result.filePaths[0];
+                    event.reply('path-selected', selectedPath);
+                }
+            }).catch(err => {
+                event.reply('download-error', 'Error al seleccionar la ruta.');
+            });
+        } catch (error) {
+            event.reply('download-error', 'Error inesperado al seleccionar la ruta.');
+        }
     });
 
 });

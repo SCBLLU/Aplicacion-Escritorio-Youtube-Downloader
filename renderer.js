@@ -1,42 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Ruta de descarga predeterminada
     const defaultPath = 'C:\\Users\\scbll\\Downloads\\Musica';
-    document.getElementById('currentPath').innerText = defaultPath;
-
-    // Inicialmente ocultar el contenedor de archivos
-    const fileListContainer = document.getElementById('fileList');
-    fileListContainer.style.display = 'none';
+    const pathElement = document.getElementById('currentPath');
+    pathElement.innerText = defaultPath;
 
     document.getElementById('downloadForm').addEventListener('submit', (event) => {
         event.preventDefault();
 
         const url = document.getElementById('url').value.trim();
-        const outputPath = document.getElementById('currentPath').innerText.trim();
+        const outputPath = pathElement.innerText.trim() || defaultPath;
 
         if (!url) {
             document.getElementById('result').innerText = 'Por favor, ingrese una URL válida.';
             return;
         }
 
-        // Envía la URL y la ruta de descarga al proceso principal para iniciar la descarga
         window.electron.send('download', { url, outputPath });
-
-        // Mensaje de estado para el usuario
         document.getElementById('result').innerText = 'Descargando...';
-
-        // Ocultar la lista de archivos antes de la descarga
         fileListContainer.style.display = 'none';
     });
 
     // Limpiar el campo de URL
     document.getElementById('clearUrl').addEventListener('click', () => {
-        document.getElementById('url').value = '';
+        const urlInput = document.getElementById('url');
+        urlInput.value = '';
         document.getElementById('result').innerText = '';
 
-        // Ocultar la lista de archivos y vaciar el contenedor
         fileListContainer.style.display = 'none';
         document.getElementById('files').innerHTML = '';
+
+        if (!urlInput.value.trim()) {
+            document.getElementById('result').innerText = 'Por favor, ingrese una URL válida.';
+        }
     });
+
 
     // Seleccionar la ruta de descarga
     document.getElementById('selectPath').addEventListener('click', () => {
@@ -74,6 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.electron.on('path-selected', (path) => {
-        document.getElementById('currentPath').innerText = path;
+        const pathElement = document.getElementById('currentPath');
+        pathElement.innerText = path;
+
+        // Efecto visual para mostrar el cambio
+        pathElement.style.transition = 'background-color 0.3s ease';
+        pathElement.style.backgroundColor = 'lightgreen';
+        setTimeout(() => {
+            pathElement.style.backgroundColor = 'transparent';
+        }, 500);
     });
+
 });
