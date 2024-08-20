@@ -27,6 +27,13 @@ Una vez que las dependencias estén instaladas, puedes levantar la aplicación e
 ```
 npm start
 ```
+
+Para empaquetar el proyecto en una carpeta con su ejecutable .exe ejecutar el siguiente comando en la terminal:
+
+```
+npm run package
+```
+
 ![image](https://github.com/user-attachments/assets/8b0e9c7d-c702-4d80-bf09-946e1a65c251)
 
 
